@@ -1,0 +1,66 @@
+﻿@model TraceArt_Insurance.Models.Bikeinsurance
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Bikeinsurance</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.PolicyNo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PolicyNo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RegistrationNo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RegistrationNo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SelectPlan)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SelectPlan)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SelectPlanTenure)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SelectPlanTenure)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { PolicyNo = Model.PolicyNo }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

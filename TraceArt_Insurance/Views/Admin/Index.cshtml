@@ -1,0 +1,84 @@
+﻿@model IEnumerable<TraceArt_Insurance.Models.Bikeinsurance>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+@if (TempData["InsertMessage"] != null)
+{
+    <div class="alert alert-success alert-dismissible">
+        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+        <strong>Success!</strong> @TempData["InsertMessage"]
+    </div>
+}
+@if (TempData["UpdateMessage"] != null)
+{
+    <div class="alert alert-success alert-dismissible">
+        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+        <strong>Success!</strong> @TempData["UpdateMessage"]
+    </div>
+}
+@if (TempData["DeleteMessage"] != null)
+{
+    <div class="alert alert-success alert-dismissible">
+        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+        <strong>Success!</strong> @TempData["DeleteMessage"]
+    </div>
+}
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table table-bordered table-hover table-striped">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.PolicyNo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RegistrationNo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SelectPlan)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SelectPlanTenure)
+        </th>
+        <th>Operations</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.PolicyNo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RegistrationNo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SelectPlan)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SelectPlanTenure)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { PolicyNo = item.PolicyNo }) |
+                @Html.ActionLink("Details", "Details", new { PolicyNo = item.PolicyNo }) |
+                @Html.ActionLink("Delete", "Delete", new { PolicyNo = item.PolicyNo })
+            </td>
+        </tr>
+    }
+
+</table>
